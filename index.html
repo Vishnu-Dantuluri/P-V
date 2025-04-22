@@ -480,24 +480,25 @@
                         </div>
                     </a>
                 </div>
+                <!-- Reel 3 -->
+           
                 
                 <!-- Reel 2 -->
                 <div class="reel-item">
                     <a href="https://www.instagram.com/_vibe__check__/" target="_blank">
-                        <video muted loop preload="metadata" poster="reel2-poster.jpg">
-                            <source src="reel2.mp4#t=0.1" type="video/mp4">
+                        <video muted loop preload="metadata" poster="reel3-poster.jpg">
+                            <source src="reel3.mp4#t=0.1" type="video/mp4">
                         </video>
                         <div class="reel-overlay">
                             <i class="fab fa-instagram"></i>
                         </div>
                     </a>
                 </div>
-                
-                <!-- Reel 3 -->
+
                 <div class="reel-item">
-                    <a href="https://www.instagram.com/_vibe__check__/" target="_blank">
-                        <video muted loop preload="metadata" poster="reel3-poster.jpg">
-                            <source src="reel3.mp4#t=0.1" type="video/mp4">
+                    <a href="https://www.instagram.com/reel/DBluSpry8A0/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA== " target="_blank">
+                        <video muted preload="auto" poster="reel2-poster.jpg">
+                            <source src="ssd.mp4" type="video/mp4">
                         </video>
                         <div class="reel-overlay">
                             <i class="fab fa-instagram"></i>
@@ -643,7 +644,31 @@
                 });
             });
         });
-
+        document.addEventListener('DOMContentLoaded', function() {
+        const reels = document.querySelectorAll('.reel-item video');
+        
+        reels.forEach(video => {
+            // Ensure videos are preloaded and ready
+            video.preload = "auto";
+            video.muted = true;
+            video.loop = false;
+            
+            video.addEventListener('mouseenter', function() {
+                this.currentTime = 0;
+                this.play().catch(e => console.log("Play failed:", e));
+                
+                // Auto-pause after 5 seconds
+                setTimeout(() => {
+                    this.pause();
+                }, 5000);
+            });
+            
+            video.addEventListener('mouseleave', function() {
+                this.pause();
+                this.currentTime = 0;
+            });
+        });
+    });
         // Video hover play/pause functionality
         document.addEventListener('DOMContentLoaded', function() {
             const reels = document.querySelectorAll('.reel-item video');
