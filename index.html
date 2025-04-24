@@ -550,6 +550,102 @@
 .dark-mode .about-text p {
     color: #64b5f6; /* Lighter blue for dark mode */
 }
+/* About Text Enhancements */
+.about-text {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.8;
+}
+
+.about-intro {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.name-highlight {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--primary);
+    text-shadow: 0 0 5px rgba(108, 99, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.profession-glow {
+    font-weight: 600;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: all 0.3s ease;
+}
+
+.skill-underline {
+    position: relative;
+    font-weight: 600;
+}
+
+.skill-underline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.skill-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.about-journey {
+    font-size: 1.1rem;
+    position: relative;
+}
+
+.unique-style {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--secondary);
+    text-decoration: wavy underline var(--accent);
+    text-underline-offset: 4px;
+}
+
+.memorable-art {
+    font-weight: 600;
+    position: relative;
+}
+
+.memorable-art::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(255, 101, 132, 0.1) 100%);
+    border-radius: 4px;
+    z-index: -1;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Dark Mode Adjustments */
+.dark-mode .name-highlight {
+    text-shadow: 0 0 8px rgba(127, 90, 240, 0.5);
+}
+
+.dark-mode .profession-glow {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.dark-mode .memorable-art::before {
+    background: linear-gradient(135deg, rgba(127, 90, 240, 0.2) 0%, rgba(44, 182, 125, 0.2) 100%);
+}
     </style>
 </head>
 <body>
@@ -649,10 +745,9 @@
             <h2>About Me</h2>
         </div>
         <div class="about-text">
-            <p style="color: #0066cc; font-size: 1.1rem; line-height: 1.8;">
-                <p>I'm Vishnu Vardhan Varma Dantuluri, a passionate photographer and videographer with a deep love for capturing moments that tell compelling stories. Skilled in framing, lighting, and editing to bring emotions to life through visuals.</p>
-                <p>My journey began with a simple mobile camera, and through constant exploration of new perspectives, I've developed a unique style that transforms everyday scenes into memorable art.</p>
-            </div>
+            <p class="about-intro">I'm <span class="name-highlight">Vishnu Vardhan Varma Dantuluri</span>, a passionate <span class="profession-glow">photographer</span> and <span class="profession-glow">videographer</span> with a deep love for capturing moments that tell compelling stories. Skilled in <span class="skill-underline">framing</span>, <span class="skill-underline">lighting</span>, and <span class="skill-underline">editing</span> to bring emotions to life through visuals.</p>
+            <p class="about-journey">My journey began with a simple mobile camera, and through constant exploration of new perspectives, I've developed a <span class="unique-style">unique style</span> that transforms everyday scenes into <span class="memorable-art">memorable art</span>.</p>
+        </div>
             <div class="skills">
                 <div class="skill-card">
                     <h3><i class="fas fa-camera"></i> Tools I Use</h3>
